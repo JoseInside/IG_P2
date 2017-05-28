@@ -25,9 +25,12 @@ public:
 	~Malla();
 
 		void dibuja();
+
 		int getNumeroVertices() { return numVertices; }
 		int getNumeroNormales() { return numNormales; }
 		int getNumeroCaras() { return numCaras; }
+
+		bool line = false;
 
 	
 };

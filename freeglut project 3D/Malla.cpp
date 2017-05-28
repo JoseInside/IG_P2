@@ -30,10 +30,11 @@ Malla::~Malla()
 void Malla::dibuja(){
 	
 	//glMatrixMode(GL_MODELVIEW);
-
+	glColor3f(0, 0, 1);
 	for (int i = 0; i < numCaras; i++) {
 		//glLineWidth(1.0);
-		glBegin(GL_POLYGON);// glBegin(GL_LINE_LOOP);
+		if(line)  glBegin(GL_LINE_LOOP);
+		else if (!line) glBegin(GL_POLYGON); 
 
 		for (int j = 0; j< cara[i]->getNumeroVertices(); j++) {
 

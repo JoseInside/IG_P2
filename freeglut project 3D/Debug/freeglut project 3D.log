@@ -1,2 +1,1 @@
-﻿  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\IG_P2\Debug\freeglut project 3D.exe
-  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\IG_P2\Debug\freeglut project 3D.pdb (Full PDB)
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'c:\users\skullatt\desktop\ig-2\freeglut project 3d (2012)\debug\freeglut project 3d.pdb' because it is being used by another process.

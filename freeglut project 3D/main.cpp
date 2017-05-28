@@ -5,6 +5,7 @@
 #include <GL/freeglut.h>
 #include "Hipotrocoide.h"
 //#include <GL/glut.h>
+#include "Coche.h"
 
 #include <iostream>
 using namespace std;
@@ -28,6 +29,8 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 GLfloat angX, angY, angZ;
 
 Hipotrocoide h(16, 200, 7, 4, 2);
+Coche newCoche(1, 1, 1, 1, 1, 1);
+bool line_ = false;
 
 void buildSceneObjects() {
 	angX = 0.0f;
@@ -102,8 +105,9 @@ void display(void) {
 	// Drawing the scene	 		 
 	glColor3f(1.0, 1.0, 1.0);
 	h.dibuja();
-	glutSolidCube(1);
-	//glutSolidSphere(6, 50, 60); //Sphere: radius=6, meridians=50, parallels=60
+	
+	//newCoche.dibujaCoche();
+	
 	glPopMatrix();
 
 	glFlush();
@@ -152,6 +156,9 @@ void key(unsigned char key, int x, int y) {
 	case 'x': angY = angY - 5; break;
 	case 'd': angZ = angZ + 5; break;
 	case 'c': angZ = angZ - 5; break;
+	case 'l':
+		h.line = !h.line;
+		break;
 	default:
 		need_redisplay = false;
 		break;
