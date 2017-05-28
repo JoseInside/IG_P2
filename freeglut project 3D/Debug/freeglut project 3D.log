@@ -1,10 +1,2 @@
-﻿  Hipotrocoide.cpp
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(31): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(50): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(101): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(103): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(114): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\skullatt\desktop\ig_p2\freeglut project 3d\hipotrocoide.cpp(121): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\Debug\freeglut project 3D.exe
-  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\Debug\freeglut project 3D.pdb (Full PDB)
+﻿  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\IG_P2\Debug\freeglut project 3D.exe
+  freeglut project 3D.vcxproj -> C:\Users\Skullatt\Desktop\IG_P2\IG_P2\Debug\freeglut project 3D.pdb (Full PDB)

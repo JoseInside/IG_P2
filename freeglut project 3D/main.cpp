@@ -102,6 +102,7 @@ void display(void) {
 	// Drawing the scene	 		 
 	glColor3f(1.0, 1.0, 1.0);
 	h.dibuja();
+	glutSolidCube(1);
 	//glutSolidSphere(6, 50, 60); //Sphere: radius=6, meridians=50, parallels=60
 	glPopMatrix();
 
