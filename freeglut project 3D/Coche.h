@@ -14,11 +14,11 @@ public:
 
 	//gluCylinder(q, _baseRadius, _topRadius, _height, _slices, _stacks);
 
-	void dibujaCoche();
+	void dibujaCoche(GLfloat girRueda);
+	GLfloat girRueda;
 	
 private:
 	GLUquadricObj* q;
-	GLfloat girRueda;
 	int _tamCoche;
 	int _baseRadius;
 	int _topRadius;

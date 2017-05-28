@@ -29,13 +29,20 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 GLfloat angX, angY, angZ;
 
 Hipotrocoide h(16, 200, 7, 4, 2);
-Coche newCoche(1, 1, 1, 1, 1, 1);
 bool line_ = false;
+//coche
+Coche newCoche(1, 1, 1, 1, 1, 1);
+float g;
+GLfloat gCoche;
+float rotRuedas;
+
 
 void buildSceneObjects() {
 	angX = 0.0f;
 	angY = 0.0f;
 	angZ = 0.0f;
+
+
 }
 
 void initGL() {
@@ -105,8 +112,13 @@ void display(void) {
 	// Drawing the scene	 		 
 	glColor3f(1.0, 1.0, 1.0);
 	h.dibuja();
-	
-	//newCoche.dibujaCoche();
+	//COCHE
+	g = atan2(h.C2(gCoche)->getX(), h.C2(gCoche)->getZ());
+	g = (g * 360) / (2 * 3.1415926);
+	glTranslated(h.C(gCoche)->getX(), h.C(gCoche)->getY(), h.C(gCoche)->getZ());
+	glRotated(-90, 0, 1, 0);
+	glRotated(g, 0, 1, 0);	
+	newCoche.dibujaCoche(rotRuedas);
 	
 	glPopMatrix();
 
@@ -161,6 +173,14 @@ void key(unsigned char key, int x, int y) {
 		break;
 	default:
 		need_redisplay = false;
+		break;
+	case 'q':
+		gCoche += 0.1;
+		rotRuedas -= 10;
+		break;
+	case 'w':
+		gCoche -= 0.1;
+		rotRuedas += 10;
 		break;
 	}
 

@@ -7,7 +7,8 @@ Coche::~Coche()
 	gluDeleteQuadric(q);
 }
 
-void Coche::dibujaCoche() {
+void Coche::dibujaCoche(GLfloat girRueda) {
 
+	glutSolidCube(1);
 	
 }
