@@ -28,6 +28,7 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 GLfloat angX, angY, angZ;
 
 Hipotrocoide h(16, 200, 7, 4, 2);
+bool line_ = false;
 
 void buildSceneObjects() {
 	angX = 0.0f;
@@ -151,6 +152,9 @@ void key(unsigned char key, int x, int y) {
 	case 'x': angY = angY - 5; break;
 	case 'd': angZ = angZ + 5; break;
 	case 'c': angZ = angZ - 5; break;
+	case 'l':
+		h.line = !h.line;
+		break;
 	default:
 		need_redisplay = false;
 		break;
