@@ -10,6 +10,21 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cara.cpp" />
+    <ClCompile Include="Hipotrocoide.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Malla.cpp" />
+    <ClCompile Include="PV3D.cpp" />
+    <ClCompile Include="VerticeNormal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cara.h" />
+    <ClInclude Include="Hipotrocoide.h" />
+    <ClInclude Include="Malla.h" />
+    <ClInclude Include="PV3D.h" />
+    <ClInclude Include="VerticeNormal.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7B0BFFD4-F43D-4F20-B1CE-F95EB35AB0A4}</ProjectGuid>
     <RootNamespace>freeglutproject3D</RootNamespace>
@@ -19,7 +34,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -65,21 +80,6 @@
       <AdditionalLibraryDirectories>$(SolutionDir)freeglut\lib\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Cara.cpp" />
-    <ClCompile Include="Hipotrocoide.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Malla.cpp" />
-    <ClCompile Include="PV3D.cpp" />
-    <ClCompile Include="VerticeNormal.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Cara.h" />
-    <ClInclude Include="Hipotrocoide.h" />
-    <ClInclude Include="Malla.h" />
-    <ClInclude Include="PV3D.h" />
-    <ClInclude Include="VerticeNormal.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

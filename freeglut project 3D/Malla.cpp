@@ -29,12 +29,11 @@ Malla::~Malla()
 
 void Malla::dibuja(){
 	
-	glMatrixMode(GL_MODELVIEW);
+	//glMatrixMode(GL_MODELVIEW);
 
 	for (int i = 0; i < numCaras; i++) {
-		glLineWidth(1.0);
+		//glLineWidth(1.0);
 		glBegin(GL_POLYGON);// glBegin(GL_LINE_LOOP);
-
 
 		for (int j = 0; j< cara[i]->getNumeroVertices(); j++) {
 

@@ -21,7 +21,7 @@ PV3D* PV3D::clona(){
 
 PV3D* PV3D::normaliza(GLfloat x, GLfloat y, GLfloat z){
 
-	PV3D* p = new PV3D(x, y, z, 0);
+	/*PV3D* p = new PV3D(x, y, z, 0);
 
 	GLfloat modulo = sqrtf(fabs(pow(p->x,2) + pow(p->y, 2) + pow(p->z, 2)));
 	//p->productoEscalar(p);
@@ -29,6 +29,14 @@ PV3D* PV3D::normaliza(GLfloat x, GLfloat y, GLfloat z){
 	p->x = p->x / modulo;
 	p->y = p->y / modulo;
 	p->z = p->z / modulo;
+	return p;*/
+	GLfloat modulo2 = productoEscalar(this);
+	PV3D* p = new PV3D(x, y, z, 0);
+	if (modulo2>0) {
+		p->x = x / sqrt(modulo2);
+		p->y = y / sqrt(modulo2);
+		p->z = z / sqrt(modulo2);
+	}
 	return p;
 }
 

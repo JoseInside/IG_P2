@@ -19,7 +19,7 @@ public:
 
 	//METODOS
 
-	PV3D* C(GLfloat t), * C’(GLfloat t),* C’’(GLfloat t),* T(GLfloat t),* B(GLfloat t),* N(GLfloat t);// métodos necesarios para rellenar la matriz m
+	PV3D* C(GLfloat t), * C2(GLfloat t),* C3(GLfloat t),* T(GLfloat t),* B(GLfloat t),* N(GLfloat t);// métodos necesarios para rellenar la matriz m
 
 	PV3D* calculoVectorNormal(Cara* c);
 
