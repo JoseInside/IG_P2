@@ -29,6 +29,7 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 // Scene variables
 GLfloat angX, angY, angZ;
 
+<<<<<<< HEAD
 
 //HIPOTROCOIDE
 Hipotrocoide h(16, 200, 7, 4, 2);
@@ -36,9 +37,15 @@ bool line_ = false;
 
 //COCHE
 Coche newCoche(1, 1, 1, 1, 1, 1);
+=======
+Hipotrocoide h(16, 250, 7, 4, 2);
+bool line_ = false;
+//coche
+>>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 float g;
-GLfloat gCoche;
+GLfloat gCoche = 0.0f;
 float rotRuedas;
+<<<<<<< HEAD
 
 //CAMARA
 GLfloat gRoll = 0;
@@ -47,6 +54,10 @@ PV3D* look = new PV3D(lookX, lookY, lookZ, 0);
 PV3D* up = new PV3D(upX, upY, upZ, 0);
 Camara* cam = new Camara(eye, look, up);
 
+=======
+Coche newCoche(1, 1, 1, 1, 1, 1, gCoche);
+GLUquadricObj * q;
+>>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 
 void buildSceneObjects() {
 	angX = 0.0f;
@@ -121,17 +132,30 @@ void display(void) {
 
 	// Drawing the scene	 		 
 	glColor3f(1.0, 1.0, 1.0);
+	
+	//HIPOTROCOIDE
 	h.dibuja();
+
 	//COCHE
 	g = atan2(h.C2(gCoche)->getX(), h.C2(gCoche)->getZ());
 	g = (g * 360) / (2 * 3.1415926);
 	glTranslated(h.C(gCoche)->getX(), h.C(gCoche)->getY(), h.C(gCoche)->getZ());
 	glRotated(-90, 0, 1, 0);
-	glRotated(g, 0, 1, 0);	
-	newCoche.dibujaCoche(rotRuedas);
+	glRotated(g, 0, 1, 0);
 	
+	q = gluNewQuadric();
+	
+	//PARA PRUEBAS DE LUZ
+	/*
+	glPushMatrix();
+	glTranslated(7, 0, 0);
+	glutSolidSphere(2, 30, 30);
 	glPopMatrix();
+	*/
 
+	newCoche.dibujaCoche(rotRuedas, q);
+
+	glPopMatrix();
 	glFlush();
 	glutSwapBuffers();
 }
@@ -184,19 +208,33 @@ void key(unsigned char key, int x, int y) {
 	default:
 		need_redisplay = false;
 		break;
+<<<<<<< HEAD
 	case 'e':
+=======
+	case 'f':
+>>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 		gCoche += 0.1;
 		rotRuedas -= 10;
 		break;
-	case 'w':
+	case 'v':
 		gCoche -= 0.1;
 		rotRuedas += 10;
 		break;
+<<<<<<< HEAD
 	case 'q':
 		cam->roll();
 		break;
 	case '1':
 		cam->giraX();
+=======
+	case'h': 
+		glEnable(GL_LIGHT0);
+	//	lightSwitch(GL_TRUE); 
+		break;
+	case 'n': 
+		glDisable(GL_LIGHT0);
+	//	lightSwitch(GL_FALSE); 
+>>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 		break;
 	}
 

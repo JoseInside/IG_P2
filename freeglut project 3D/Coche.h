@@ -5,8 +5,8 @@
 class Coche
 {
 public:
-	Coche(int tamCoche, int baseRadius, int topRadius, int height, int slices, int stacks) :_tamCoche(tamCoche),
-		_baseRadius(baseRadius), _topRadius(topRadius), _height(height), _slices(slices), _stacks(stacks) {}
+	Coche(int tamCoche, int baseRadius, int topRadius, int height, int slices, int stacks, GLfloat vel) :_tamCoche(tamCoche),
+		_baseRadius(baseRadius), _topRadius(topRadius), _height(height), _slices(slices), _stacks(stacks), _vel(vel) {}
 	~Coche();
 	
 	//glutSolidCube(tamCoche);
@@ -14,16 +14,18 @@ public:
 
 	//gluCylinder(q, _baseRadius, _topRadius, _height, _slices, _stacks);
 
-	void dibujaCoche(GLfloat girRueda);
+	void dibujaCoche(GLfloat girRueda, GLUquadricObj * q);
 	GLfloat girRueda;
 	
 private:
 	GLUquadricObj* q;
+	GLfloat _vel;
 	int _tamCoche;
 	int _baseRadius;
 	int _topRadius;
 	int _height;
 	int _slices;
 	int _stacks;
+	float g;
 };
 
