@@ -73,6 +73,7 @@ void initGL() {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 
+	/*
 	GLfloat d[] = { 0.7f,0.5f,0.5f,1.0f };
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
 	GLfloat a[] = { 0.3f,0.3f,0.3f,1.0f };
@@ -81,9 +82,9 @@ void initGL() {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, s);
 	GLfloat p[] = { 25.0f, 25.0f, 25.0f, 1.0f };
 	glLightfv(GL_LIGHT0, GL_POSITION, p);
-
+	*/
 	//prueba
-	/*GLfloat d[] = { 0, 1, 0, 1.0f };
+	GLfloat d[] = { 0, 1, 0, 1.0f };
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
 	GLfloat a[] = { 0, 0, 0, 1.0f };
 	glLightfv(GL_LIGHT0, GL_AMBIENT, a);
@@ -92,9 +93,7 @@ void initGL() {
 	GLfloat p[] = { 0, 10, 10, 0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, p);
 	GLfloat lmb[] = { 0, 0, 0, 1 };
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmb);*/
-
-
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmb);
 
 
 	// Camera set up
@@ -162,8 +161,8 @@ void display(void) {
 	glPushMatrix();
 	glTranslated(7, 0, 0);
 	glutSolidSphere(2, 30, 30);
-	glPopMatrix();
-	*/
+	glPopMatrix();*/
+	
 
 	newCoche.dibujaCoche(rotRuedas, q);
 
@@ -237,11 +236,9 @@ void key(unsigned char key, int x, int y) {
 		cam->giraX();
 	case'h': 
 		glEnable(GL_LIGHT0);
-	//	lightSwitch(GL_TRUE); 
 		break;
 	case 'n': 
 		glDisable(GL_LIGHT0);
-	//	lightSwitch(GL_FALSE); 
 		break;
 	case 'g':
 		glEnable(GL_LIGHT1);

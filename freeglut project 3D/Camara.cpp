@@ -112,11 +112,11 @@ void Camara::roll() {
 	glMatrixMode(GL_MODELVIEW);
 
 	//u global
-	PV3D* i = new PV3D(u->getX()* cos(n) + v->getX() * sin(n), u->getY()* cos(n) + v->getY() * sin(n), u->getZ()* cos(n) + v->getZ() * sin(n), 0);
+	PV3D* i = new PV3D(u->getX()* cos(rot) + v->getX() * sin(rot), u->getY()* cos(rot) + v->getY() * sin(rot), u->getZ()* cos(rot) + v->getZ() * sin(rot), 0);
 
 
-	//v  global
-	PV3D* j = new PV3D(-u->getX()* sin(n) + v->getX() * cos(n), -u->getY()* sin(n) + v->getY() * cos(n), -u->getZ()* sin(n) + v->getZ() * cos(n), 0);
+	//v global
+	PV3D* j = new PV3D(-u->getX()* sin(rot) + v->getX() * cos(rot), -u->getY()* sin(rot) + v->getY() * cos(rot), -u->getZ()* sin(rot) + v->getZ() * cos(rot), 0);
 
 	u = i;
 	v = j;
@@ -129,16 +129,27 @@ void Camara::roll() {
 
 void Camara::giraX() {
 
+
+	//matriz de vista
 	glMatrixMode(GL_MODELVIEW);
+	//sumamos angulo
+	x += rot;
 
-	x += 0.05;
-
+	//radio
+	//Raiz(y^2 + z^2);
 	r = sqrt(d->getY() * d->getY() + d->getZ() * d->getZ());
-	eye_ = new PV3D(eye_->getX(), r * sin(n), r * cos(n), 1);
 
+	//Ponemos el nuevo Ojo
+	eye_ = new PV3D(eye_->getX(), r*sin(x), r*cos(x), 1);
+
+	//damos valores a n,u y v
 	asignarValores();
-
+	//calculamos la matriz V
 	rMatriz();
+
+
 	glLoadIdentity();
 	gluLookAt(eye_->getX(), eye_->getY(), eye_->getZ(), look_->getX(), look_->getY(), look_->getZ(), up_->getX(), up_->getY(), up_->getZ());
+
+
 }

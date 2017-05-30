@@ -1,6 +1,6 @@
 #pragma once
 #include "Malla.h"
-
+#include "GL\freeglut.h"
 
 class Camara
 {
@@ -36,7 +36,7 @@ public:
 	GLfloat Vista2[16];
 
 	GLdouble r;
-	GLdouble n = 0.05; //angulo roll
+	GLdouble rot = 0.05; //angulo rotación
 	GLdouble x = 0;  //angulo girax
 
 	void asignarValores();
