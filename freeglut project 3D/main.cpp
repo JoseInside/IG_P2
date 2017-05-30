@@ -29,23 +29,18 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 // Scene variables
 GLfloat angX, angY, angZ;
 
-<<<<<<< HEAD
 
 //HIPOTROCOIDE
-Hipotrocoide h(16, 200, 7, 4, 2);
+Hipotrocoide h(16, 250, 7, 4, 2);
+
 bool line_ = false;
 
 //COCHE
-Coche newCoche(1, 1, 1, 1, 1, 1);
-=======
-Hipotrocoide h(16, 250, 7, 4, 2);
-bool line_ = false;
-//coche
->>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 float g;
 GLfloat gCoche = 0.0f;
+Coche newCoche(1, 1, 1, 1, 1, 1, gCoche);
 float rotRuedas;
-<<<<<<< HEAD
+
 
 //CAMARA
 GLfloat gRoll = 0;
@@ -54,10 +49,7 @@ PV3D* look = new PV3D(lookX, lookY, lookZ, 0);
 PV3D* up = new PV3D(upX, upY, upZ, 0);
 Camara* cam = new Camara(eye, look, up);
 
-=======
-Coche newCoche(1, 1, 1, 1, 1, 1, gCoche);
 GLUquadricObj * q;
->>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 
 void buildSceneObjects() {
 	angX = 0.0f;
@@ -208,11 +200,11 @@ void key(unsigned char key, int x, int y) {
 	default:
 		need_redisplay = false;
 		break;
-<<<<<<< HEAD
 	case 'e':
-=======
+		gCoche -= 0.1;
+		rotRuedas += 10;
+		break;
 	case 'f':
->>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 		gCoche += 0.1;
 		rotRuedas -= 10;
 		break;
@@ -220,13 +212,11 @@ void key(unsigned char key, int x, int y) {
 		gCoche -= 0.1;
 		rotRuedas += 10;
 		break;
-<<<<<<< HEAD
 	case 'q':
 		cam->roll();
 		break;
 	case '1':
 		cam->giraX();
-=======
 	case'h': 
 		glEnable(GL_LIGHT0);
 	//	lightSwitch(GL_TRUE); 
@@ -234,7 +224,6 @@ void key(unsigned char key, int x, int y) {
 	case 'n': 
 		glDisable(GL_LIGHT0);
 	//	lightSwitch(GL_FALSE); 
->>>>>>> 551ed9f46bd1cec5bcdd9b272a66c4a7eea0e82a
 		break;
 	}
 
