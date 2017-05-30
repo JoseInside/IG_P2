@@ -6,6 +6,7 @@
 #include "Hipotrocoide.h"
 //#include <GL/glut.h>
 #include "Coche.h"
+#include "Camara.h"
 
 #include <iostream>
 using namespace std;
@@ -28,20 +29,29 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 // Scene variables
 GLfloat angX, angY, angZ;
 
+
+//HIPOTROCOIDE
 Hipotrocoide h(16, 200, 7, 4, 2);
 bool line_ = false;
-//coche
+
+//COCHE
 Coche newCoche(1, 1, 1, 1, 1, 1);
 float g;
 GLfloat gCoche;
 float rotRuedas;
+
+//CAMARA
+GLfloat gRoll = 0;
+PV3D* eye = new PV3D(eyeX, eyeY, eyeZ, 1);
+PV3D* look = new PV3D(lookX, lookY, lookZ, 0);
+PV3D* up = new PV3D(upX, upY, upZ, 0);
+Camara* cam = new Camara(eye, look, up);
 
 
 void buildSceneObjects() {
 	angX = 0.0f;
 	angY = 0.0f;
 	angZ = 0.0f;
-
 
 }
 
@@ -174,13 +184,19 @@ void key(unsigned char key, int x, int y) {
 	default:
 		need_redisplay = false;
 		break;
-	case 'q':
+	case 'e':
 		gCoche += 0.1;
 		rotRuedas -= 10;
 		break;
 	case 'w':
 		gCoche -= 0.1;
 		rotRuedas += 10;
+		break;
+	case 'q':
+		cam->roll();
+		break;
+	case '1':
+		cam->giraX();
 		break;
 	}
 

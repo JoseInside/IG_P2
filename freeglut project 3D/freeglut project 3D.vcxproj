@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camara.cpp" />
     <ClCompile Include="Cara.cpp" />
     <ClCompile Include="Coche.cpp" />
     <ClCompile Include="Hipotrocoide.cpp" />
@@ -20,6 +21,7 @@
     <ClCompile Include="VerticeNormal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camara.h" />
     <ClInclude Include="Cara.h" />
     <ClInclude Include="Coche.h" />
     <ClInclude Include="Hipotrocoide.h" />
