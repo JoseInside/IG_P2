@@ -72,6 +72,7 @@ void initGL() {
 	// Light0
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+
 	GLfloat d[] = { 0.7f,0.5f,0.5f,1.0f };
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
 	GLfloat a[] = { 0.3f,0.3f,0.3f,1.0f };
@@ -80,6 +81,21 @@ void initGL() {
 	glLightfv(GL_LIGHT0, GL_SPECULAR, s);
 	GLfloat p[] = { 25.0f, 25.0f, 25.0f, 1.0f };
 	glLightfv(GL_LIGHT0, GL_POSITION, p);
+
+	//prueba
+	/*GLfloat d[] = { 0, 1, 0, 1.0f };
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
+	GLfloat a[] = { 0, 0, 0, 1.0f };
+	glLightfv(GL_LIGHT0, GL_AMBIENT, a);
+	GLfloat s[] = { 1.0f,1.0f,1.0f,1.0f };
+	glLightfv(GL_LIGHT0, GL_SPECULAR, s);
+	GLfloat p[] = { 0, 10, 10, 0 };
+	glLightfv(GL_LIGHT0, GL_POSITION, p);
+	GLfloat lmb[] = { 0, 0, 0, 1 };
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmb);*/
+
+
+
 
 	// Camera set up
 	glMatrixMode(GL_MODELVIEW);
@@ -99,6 +115,10 @@ void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glMatrixMode(GL_MODELVIEW);
+	//focos luz
+	GLfloat p[] = { 0, 10, 10, 0 };
+	glLightfv(GL_LIGHT0, GL_POSITION, p);
+
 	glPushMatrix();
 
 	// Rotating the scene
@@ -201,8 +221,6 @@ void key(unsigned char key, int x, int y) {
 		need_redisplay = false;
 		break;
 	case 'e':
-		gCoche -= 0.1;
-		rotRuedas += 10;
 		break;
 	case 'f':
 		gCoche += 0.1;
@@ -224,6 +242,15 @@ void key(unsigned char key, int x, int y) {
 	case 'n': 
 		glDisable(GL_LIGHT0);
 	//	lightSwitch(GL_FALSE); 
+		break;
+	case 'g':
+		glEnable(GL_LIGHT1);
+		glEnable(GL_LIGHT2);
+		break;
+
+	case 'b':
+		glDisable(GL_LIGHT1);
+		glDisable(GL_LIGHT2);
 		break;
 	}
 
