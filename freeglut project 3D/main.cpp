@@ -32,6 +32,7 @@ GLfloat angX, angY, angZ;
 
 //HIPOTROCOIDE
 Hipotrocoide h(16, 250, 7, 4, 2);
+bool verde = false;
 
 bool line_ = false;
 
@@ -73,27 +74,30 @@ void initGL() {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 
-	/*
-	GLfloat d[] = { 0.7f,0.5f,0.5f,1.0f };
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
-	GLfloat a[] = { 0.3f,0.3f,0.3f,1.0f };
-	glLightfv(GL_LIGHT0, GL_AMBIENT, a);
-	GLfloat s[] = { 1.0f,1.0f,1.0f,1.0f };
-	glLightfv(GL_LIGHT0, GL_SPECULAR, s);
-	GLfloat p[] = { 25.0f, 25.0f, 25.0f, 1.0f };
-	glLightfv(GL_LIGHT0, GL_POSITION, p);
-	*/
-	//prueba
-	GLfloat d[] = { 0, 1, 0, 1.0f };
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
-	GLfloat a[] = { 0, 0, 0, 1.0f };
-	glLightfv(GL_LIGHT0, GL_AMBIENT, a);
-	GLfloat s[] = { 1.0f,1.0f,1.0f,1.0f };
-	glLightfv(GL_LIGHT0, GL_SPECULAR, s);
-	GLfloat p[] = { 0, 10, 10, 0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, p);
-	GLfloat lmb[] = { 0, 0, 0, 1 };
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmb);
+
+
+		//luz verde
+		GLfloat d[] = { 0, 1, 0, 1.0f };
+		glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
+		GLfloat a[] = { 0, 0, 0, 1.0f };
+		glLightfv(GL_LIGHT0, GL_AMBIENT, a);
+		GLfloat s[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+		glLightfv(GL_LIGHT0, GL_SPECULAR, s);
+		GLfloat p[] = { 10, 10, 0, 0 };
+		glLightfv(GL_LIGHT0, GL_POSITION, p);
+		GLfloat lmb[] = { 0, 0, 0, 1 };
+		glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmb);
+	
+		/*
+		GLfloat d[] = { 0.7f, 0.5f, 0.5f, 1.0f };
+		glLightfv(GL_LIGHT0, GL_DIFFUSE, d);
+		GLfloat a[] = { 0.3f, 0.3f, 0.3f, 1.0f };
+		glLightfv(GL_LIGHT0, GL_AMBIENT, a);
+		GLfloat s[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+		glLightfv(GL_LIGHT0, GL_SPECULAR, s);
+		GLfloat p[] = { 25.0f, -25.0f, 25.0f, 1.0f };
+		glLightfv(GL_LIGHT0, GL_POSITION, p);*/
+	
 
 
 	// Camera set up
@@ -115,7 +119,7 @@ void display(void) {
 
 	glMatrixMode(GL_MODELVIEW);
 	//focos luz
-	GLfloat p[] = { 0, 10, 10, 0 };
+	GLfloat p[] = { 10, 10, 0, 0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, p);
 
 	glPushMatrix();
@@ -142,7 +146,7 @@ void display(void) {
 	glEnd();
 
 	// Drawing the scene	 		 
-	glColor3f(1.0, 1.0, 1.0);
+	//glColor3f(1.0, 1.0, 1.0);
 	
 	//HIPOTROCOIDE
 	h.dibuja();
@@ -248,6 +252,9 @@ void key(unsigned char key, int x, int y) {
 	case 'b':
 		glDisable(GL_LIGHT1);
 		glDisable(GL_LIGHT2);
+		break;
+	case '3':
+		verde = true;
 		break;
 	}
 

@@ -29,10 +29,10 @@ Malla::~Malla()
 
 void Malla::dibuja(){
 	
-	//glMatrixMode(GL_MODELVIEW);
-	glColor3f(0, 0, 1);
+	glMatrixMode(GL_MODELVIEW);
+	glColor3f(1, 1, 1);
 	for (int i = 0; i < numCaras; i++) {
-		//glLineWidth(1.0);
+		glLineWidth(1.0);
 		if(line)  glBegin(GL_LINE_LOOP);
 		else if (!line) glBegin(GL_POLYGON); 
 
